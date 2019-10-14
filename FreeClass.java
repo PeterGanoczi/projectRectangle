@@ -346,6 +346,11 @@ public class FreeClass {
         int count = 1;
         int sum=0;
         int incorrect=0;
+
+        System.out.print("Enter your name: ");
+        String name=myscan.nextLine();
+        System.out.println("Hello " + name +" your test is ready");
+
         while (count <= 10) {
 
             int a = rnd.nextInt(90) + 10;
@@ -384,6 +389,7 @@ public class FreeClass {
 
     public String generatePassword(int n, boolean rules) {
         if (rules == true && (n < 6 || n > 30))  // kontrola dlzky hesla
+
             n = 10;
 
         String passwd = "";

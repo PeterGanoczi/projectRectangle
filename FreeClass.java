@@ -1,6 +1,7 @@
 package sk.itsovy.ganoczi.other;
 
 import java.sql.SQLOutput;
+import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -341,6 +342,9 @@ public class FreeClass {
         Random rnd = new Random();
         Scanner myscan = new Scanner(System.in);
 
+        Date startdate=new Date();
+
+
         int symbol = rnd.nextInt(4);
         int r = 0;
         int count = 1;
@@ -350,8 +354,10 @@ public class FreeClass {
         System.out.print("Enter your name: ");
         String name=myscan.nextLine();
         System.out.println("Hello " + name +" your test is ready");
+        long startTime=startdate.getTime();
+        System.out.println(startTime);
 
-        while (count <= 10) {
+        while (count <= 5) {
 
             int a = rnd.nextInt(90) + 10;
             int b = rnd.nextInt(90) + 10;
@@ -384,7 +390,13 @@ public class FreeClass {
             }
             count++;
         }
-        System.out.println("Correct answers " + sum + " incorrect answers "+incorrect);
+        Date enddate=new Date();
+        long timeEnd=enddate.getTime();
+        long resultTime=(timeEnd-startTime)/1000;
+        System.out.println(startTime);
+        System.out.println(timeEnd);
+
+        System.out.println("Correct answers " + sum + " incorrect answers "+incorrect+ " and your time is " + resultTime + " seconds" );
     }
 
     public String generatePassword(int n, boolean rules) {
